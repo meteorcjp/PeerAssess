@@ -11,7 +11,7 @@
 		$email = mysqli_real_escape_string($conn, $email);
 		$telephone = mysqli_real_escape_string($conn, $telephone);
 
-		$insertSql="insert into Student(account,password,name,sex,email,telephone) values('$account','$password','$name','$sex','$email','$telephone')";
+		$insertSql="insert into Student(account,password,name,sex,email,telephone,groupId) values('$account','$password','$name','$sex','$email','$telephone','')";
 		mysqli_query($conn, $insertSql);
 	}
 
@@ -52,5 +52,17 @@
 		$conn = getConn();
 		$selectSql = "select a.name from Groups a,Student b where b.account = '$account' and a.groupId=b.groupId";
 		return mysqli_query($conn, $selectSql);
+	}
+
+	function deleteStu($account){
+		$conn = getConn();
+		$deleteSql = "delete from Student where account = '$account'";
+		mysqli_query($conn, $deleteSql);
+	}
+
+	function emptyStuGrp($groupId){
+		$conn = getConn();
+		$updateSql = "update Student set groupId='' where groupId = '$groupId'";
+		mysqli_query($conn, $updateSql);
 	}
 ?>

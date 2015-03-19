@@ -74,6 +74,7 @@
 						<td><?php echo $row[4]?></td>
 						<td><?php echo $row[5]?></td>
 						<td><?php echo $row[6]?></td>
+						<td><a href="../controller/deleteStuController.php?account=<?php echo $row[0]?>">delete</a></td>
 						<?php
 					}
 					?>

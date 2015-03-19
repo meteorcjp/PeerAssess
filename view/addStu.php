@@ -43,37 +43,37 @@
 		<div style="max-width: 50%; margin: 0 auto">
 			<form class="form-horizontal" action="../controller/addStuController.php">
 				<div class="form-group">
-					<label for="exampleInputEmail1" class="col-sm-2 control-label">Account</label>
+					<label for="inputAccount" class="col-sm-2 control-label">Account</label>
 					<div class="col-sm-10">
 						<input
 						name="account"
 						type="text" class="form-control"
-						id="exampleInputEmail1" placeholder="Account" required="">
+						id="inputAccount" placeholder="Account" required="">
 					</div>
 				</div>
 
 				<div class="form-group">
-					<label for="exampleInputPassword1" class="col-sm-2 control-label">Password</label>
+					<label for="exampleInputPassword" class="col-sm-2 control-label">Password</label>
 					<div class="col-sm-10">
 						<input
-						type="password" class="form-control" id="exampleInputPassword1"
+						type="password" class="form-control" id="exampleInputPassword"
 						placeholder="Password" name="password" required="">
 					</div>
 				</div>
 
 				<div class="form-group">
-					<label for="exampleInputEmail1" class="col-sm-2 control-label">Name</label>
+					<label for="inputName" class="col-sm-2 control-label">Name</label>
 					<div class="col-sm-10">
 						<input
 						type="text" class="form-control"
-						id="exampleInputEmail1" placeholder="Name" name="name" required="">
+						id="inputName" placeholder="Name" name="name" required="">
 					</div>
 				</div>
 
 				<div class="form-group">
-					<label for="exampleInputEmail1" class="col-sm-2 control-label">Sex</label>
+					<label for="inputSex" class="col-sm-2 control-label">Sex</label>
 					<div class="col-sm-10">
-						<select class="form-control" id="exampleInputEmail1" name="sex" required="">
+						<select class="form-control" id="inputSex" name="sex" required="">
 							<option value="Male">Male</option>
 							<option value="Female">Female</option>
 						</select>
@@ -81,25 +81,25 @@
 				</div>
 
 				<div class="form-group">
-					<label for="exampleInputEmail1" class="col-sm-2 control-label">Email</label>
+					<label for="inputEmail" class="col-sm-2 control-label">Email</label>
 					<div class="col-sm-10">
 						<input
-						type="text" class="form-control"
-						id="exampleInputEmail1" placeholder="Email" name="email" required="">
+						type="email" class="form-control"
+						id="inputEmail" placeholder="Email" name="email" required="">
 					</div>
 				</div>
 
 				<div class="form-group">
-					<label for="exampleInputEmail1" class="col-sm-2 control-label">Telephone</label>
+					<label for="inputTel" class="col-sm-2 control-label">Telephone</label>
 					<div class="col-sm-10">
 						<input
 						type="text" class="form-control"
-						id="exampleInputEmail1" placeholder="Telephone" name="telephone" required="">
+						id="inputTel" placeholder="Telephone" name="telephone" required="">
 					</div>
 				</div>
 
-				<label for="exampleInputEmail1" class="col-sm-2 control-label"></label>
-				<button type="submit" class="btn btn-default">Submit</button>
+				<label for="inputSubmit" class="col-sm-2 control-label"></label>
+				<button type="submit" id="inputSubmit" class="btn btn-default">Submit</button>
 			</form>
 			<br>
 		</div>

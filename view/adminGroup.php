@@ -38,6 +38,7 @@
 					<th>Name</th>
 					<th>Description</th>
 					<th>Students</th>
+					<th>Action</th>
 				</tr>
 				<?php
 				require_once '../model/Group.php';
@@ -56,11 +57,36 @@
 						<td>$row[1]</td>
 						<td>$row[2]</td>
 						<td>$temp</td>
+						<td><a href='../controller/deleteGroupController.php?id=$row[0]'>delete</a></td>
 					</tr>";
 				}
 				?>
-
 			</table>
+
+
+			<p>Group Relations:</p>
+			<table class="table">
+				<tr>
+					<th>GroupFrom</th>
+					<th>GroupTo</th>
+					<th>Action</th>
+				</tr>
+				<?php
+				require_once '../model/GroupRelation.php';
+				$result = selectGroupRelations();
+
+				while($row=mysqli_fetch_row($result)){
+					$name1 = mysqli_fetch_row(selectGroupById($row[0]))[1];
+					$name2 = mysqli_fetch_row(selectGroupById($row[1]))[1];
+					echo "<tr>
+						<td>$name1</td>
+						<td>$name2</td>
+						<td><a href='../controller/deleteGroupRelationController.php?from=$row[0]&to=$row[1]'>delete</a></td>
+					</tr>";
+				}
+				?>
+			</table>
+
 			<a style="float:right;font-size:1.5em" href="./addGroup.php">Add a Group</a>
 			<a style="float:right;font-size:1.5em;margin-right:50px;" href="./allocateGroup.php">Allocate report to a Group</a>
 		</div>
