@@ -1,0 +1,3 @@
+dbaddress=eu-cdbr-azure-west-a.cloudapp.net
+username=b88aeaf0f4b11d
+password=133cf477
