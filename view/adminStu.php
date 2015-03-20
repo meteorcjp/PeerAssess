@@ -73,7 +73,7 @@
 						<td><?php echo $row[3]?></td>
 						<td><?php echo $row[4]?></td>
 						<td><?php echo $row[5]?></td>
-						<td><?php echo $row[6]?></td>
+						<td><?php $grId = round($row[6]/10) + 1; echo $grId?></td>
 						<td><a href="../controller/deleteStuController.php?account=<?php echo $row[0]?>">delete</a></td>
 						<?php
 					}

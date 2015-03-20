@@ -52,8 +52,9 @@
 						$temp.=",";
 					}
 					$temp = substr($temp,0, strlen($temp)-1);
+					$grId = round($row[0]/10) + 1;
 					echo "<tr>
-						<td>$row[0]</td>
+						<td>$grId</td>
 						<td>$row[1]</td>
 						<td>$row[2]</td>
 						<td>$temp</td>
