@@ -17,6 +17,7 @@ function guid(){
     return $uuid;
   }
 }
+
 session_start();
 include_once '../model/Report.php';
 $title = $_POST['title'];
@@ -25,10 +26,10 @@ $uploader = $_SESSION['account'];
 $time = date('Y-m-d',time());
 $name = $_FILES["file"]["name"];
 
-if(!eregi("xml$", $name)){
-  header("Location:../view/homepage.php?info=You can only upload .xml file!");
-  return;
-}
+// if(!eregi("xml$", $name)){
+//   header("Location:../view/homepage.php?info=You can only upload .xml file!");
+//   return;
+// }
 
 $index = strrpos($name,".");
 $name1 = substr($name, 0, $index);
