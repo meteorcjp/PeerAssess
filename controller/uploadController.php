@@ -40,6 +40,8 @@ $name = $name1.$name2;
 
 //save the file
 move_uploaded_file($_FILES["file"]["tmp_name"],"../files/".$name);
+$xml=simplexml_load_file("../files/".$name) or die("Error: Cannot create object");
+$content = $xml->content;
 //insert into database
 addReport($title, $name, $uploader, $desc, $content, $time);
 header("Location:../view/homepage.php?show=1");
