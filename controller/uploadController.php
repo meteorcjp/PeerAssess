@@ -8,7 +8,7 @@ $time = date('Y-m-d',time());
 $name = $_FILES["file"]["name"];
 
 $imageFileType = pathinfo($name,PATHINFO_EXTENSION);
-if($imageFileType == "xml"){
+// if($imageFileType == "xml"){
   //save the file
   $result = move_uploaded_file($_FILES["file"]["tmp_name"],"../files/".$name);
 
@@ -22,8 +22,8 @@ if($imageFileType == "xml"){
   else{
     header("Location:../view/homepage.php?info=Fail to upload");
   }
-}
-else {
-  header("Location:../view/homepage.php?info=Wrong file type: ".$imageFileType);
-}
+// }
+// else {
+//   header("Location:../view/homepage.php?info=Wrong file type: ".$imageFileType);
+// }
 ?>
