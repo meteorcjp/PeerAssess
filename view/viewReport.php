@@ -55,6 +55,7 @@
 								$content = file_get_contents("../files/$row[2]");
 								$content = nl2br($content);
 								echo 'b';
+								echo $row[2];
 								echo $content;
 								$title = $row[1];
 							?>
