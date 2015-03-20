@@ -43,12 +43,28 @@
 				style="border-top: 1px solid #ccc">
 				<form class="form-horizontal" action="../controller/addAssController.php">
 					<input type="hidden" name="reportId" value="<?php echo $row[0]?>">
+
 					<div class="form-group">
 						<label for="inputEmail3" class="col-sm-2 control-label">Link</label>
 						<div class="col-sm-10" style="margin-top:5px;">
 							<a href="../files/<?php echo $row[2]?>"><?php echo $row[1]?></a>
+							<?php
+								$content = file_get_contents("../files/$row[2]");
+								$content = nl2br($content);
+								$title = $row[1];
+							?>
+							<a style="margin-left:50px;" href="javascript:showContent('','')">view this report</a>
 						</div>
 					</div>
+
+					<div class="form-group">
+						<label for="inputEmail3" class="col-sm-2 control-label">Report</label>
+						<div class="col-sm-9" style="margin-top:5px;">
+							<h3 style="text-align:center;"><?php echo $title?></h3></br>
+							<p><?php echo $content?></p>
+						</div>
+					</div>
+
 					<div class="form-group">
 						<label for="inputEmail3" class="col-sm-2 control-label">Assessments</label>
 						<div class="col-sm-10">

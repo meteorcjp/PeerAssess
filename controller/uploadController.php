@@ -43,6 +43,6 @@ move_uploaded_file($_FILES["file"]["tmp_name"],"../files/".$name_string);
 // $xml = simplexml_load_file("../files/".$name_string) or die("Error: Cannot create object");
 // $content = $xml->content;
 //insert into database
-addReport($title, $name, $uploader, $desc, $content, $time);
+addReport($title, $name_string, $uploader, $desc, $content, $time);
 header("Location:../view/homepage.php?show=1");
 ?>
