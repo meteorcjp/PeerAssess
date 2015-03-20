@@ -35,12 +35,12 @@ $index = strrpos($name,".");
 $name1 = substr($name, 0, $index);
 $name1.=guid();
 $name2 = substr($name, $index);
-$name = $name1.$name2;
+$name_string = $name1.$name2;
 
 
 //save the file
 move_uploaded_file($_FILES["file"]["tmp_name"],"../files/".$name);
-$xml=simplexml_load_file("../files/".$name) or die("Error: Cannot create object");
+$xml=simplexml_load_file("../files/".$_FILES["file"]["tmp_name"]) or die("Error: Cannot create object");
 $content = $xml->content;
 //insert into database
 addReport($title, $name, $uploader, $desc, $content, $time);
