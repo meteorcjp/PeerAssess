@@ -25,10 +25,10 @@ $uploader = $_SESSION['account'];
 $time = date('Y-m-d',time());
 $name = $_FILES["file"]["name"];
 
-if(!eregi("txt$", $name)){
-  header("Location:../view/homepage.php?info=You can only upload .txt file!");
-  return;
-}
+// if(!eregi("txt$", $name)){
+//   header("Location:../view/homepage.php?info=You can only upload .txt file!");
+//   return;
+// }
 
 $index = strrpos($name,".");
 $name1 = substr($name, 0, $index);
