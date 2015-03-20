@@ -1,11 +1,11 @@
 <?php
 	require_once '../util/DBUtil.php';
 
-	function addReport($title,$name,$uploader,$desc,$uploadTime){
+	function addReport($title,$name,$uploader,$desc,$content,$uploadTime){
 		$conn = getConn();
 		$deleteSql = "delete from Report where uploader in (select account from Student where groupId in (select groupId from Student where account = '$uploader'))";
 		mysqli_query($conn, $deleteSql);
-		$insertSql = "insert into Report(title,name,uploader,description,uploadTime) values('$title','$name','$uploader','$desc','$uploadTime')";
+		$insertSql = "insert into Report(title,name,uploader,description,content,uploadTime) values('$title','$name','$uploader','$desc','$content','$uploadTime')";
 		mysqli_query($conn, $insertSql);
 	}
 

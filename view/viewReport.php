@@ -83,7 +83,6 @@
 								$content = nl2br($content);
 								$title = $row[1];
 							?>
-							<a style="margin-left:50px;" href="javascript:showContent('','')">view this report</a>
 						</div>
 					</div>
 					<div class="form-group">

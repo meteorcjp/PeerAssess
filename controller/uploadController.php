@@ -24,6 +24,7 @@ $desc = $_POST['desc'];
 $uploader = $_SESSION['account'];
 $time = date('Y-m-d',time());
 $name = $_FILES["file"]["name"];
+$content = 'nothing';
 
 if(!eregi("txt$", $name)){
   header("Location:../view/homepage.php?info=You can only upload .txt file!");
@@ -40,6 +41,6 @@ $name = $name1.$name2;
 //save the file
 move_uploaded_file($_FILES["file"]["tmp_name"],"../files/".$name);
 //insert into database
-addReport($title, $name, $uploader, $desc, $time);
+addReport($title, $name, $uploader, $desc, $content, $time);
 header("Location:../view/homepage.php?show=1");
 ?>
