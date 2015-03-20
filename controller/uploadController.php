@@ -25,7 +25,7 @@ $desc = $_POST['desc'];
 $uploader = $_SESSION['account'];
 $time = date('Y-m-d',time());
 $name = $_FILES["file"]["name"];
-
+$content = 'n';
 // if(!eregi("xml$", $name)){
 //   header("Location:../view/homepage.php?info=You can only upload .xml file!");
 //   return;
@@ -35,14 +35,14 @@ $index = strrpos($name,".");
 $name1 = substr($name, 0, $index);
 $name1.=guid();
 $name2 = substr($name, $index);
-$name_string = $name1.$name2;
+$name_str = $name1.$name2;
 
 
 //save the file
-move_uploaded_file($_FILES["file"]["tmp_name"],"../files/".$name_string);
+move_uploaded_file($_FILES["file"]["tmp_name"],"../files/".$name_str);
 // $xml = simplexml_load_file("../files/".$name_string) or die("Error: Cannot create object");
 // $content = $xml->content;
 //insert into database
-addReport($title, $name_string, $uploader, $desc, $content, $time);
+addReport($title, $name_str, $uploader, $desc, $content, $time);
 header("Location:../view/homepage.php?show=1");
 ?>
