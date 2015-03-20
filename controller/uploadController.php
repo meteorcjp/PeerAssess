@@ -17,7 +17,6 @@ function guid(){
     return $uuid;
   }
 }
-
 session_start();
 include_once '../model/Report.php';
 $title = $_POST['title'];
@@ -40,8 +39,6 @@ $name = $name1.$name2;
 
 //save the file
 move_uploaded_file($_FILES["file"]["tmp_name"],"../files/".$name);
-// $xml = simplexml_load_file("../files/".$name_string) or die("Error: Cannot create object");
-// $content = $xml->content;
 //insert into database
 addReport($title, $name, $uploader, $desc, $time);
 header("Location:../view/homepage.php?show=1");
