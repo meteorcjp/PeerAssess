@@ -17,6 +17,11 @@
 	$(function(){
 		$("#viLi").addClass("active");
 	});
+	function showContent(title,content){
+		$("#rT").html(title);
+		$("#causeLg").html(content);
+		$("#sucLg").modal("toggle");
+	}
 	</script>
 </head>
 
@@ -77,6 +82,7 @@
 							</select>
 						</div>
 					</div>
+
 					<div class="form-group">
 						<label for="inputPassword3" class="col-sm-2 control-label">Comment</label>
 						<div class="col-sm-10">
@@ -84,11 +90,13 @@
 							placeholder="Comment" name="comment" required="">
 						</div>
 					</div>
+
 					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-10">
 							<button type="submit" class="btn btn-default">Confirm</button>
 						</div>
 					</div>
+
 				</form>
 			</div>
 			<?php
