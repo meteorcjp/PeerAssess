@@ -13,9 +13,12 @@
 	<link href="../homepage.css" rel="stylesheet">
 	<script type="text/javascript" src="../js/jquery-2.1.3.min.js"></script>
 	<script type="text/javascript" src="../js/bootstrap.js"></script>
+	<link href="css/star-rating.css" media="all" rel="stylesheet" type="text/css"/>
+	<script src="js/star-rating.js" type="text/javascript"></script>
 	<script type="text/javascript">
 	$(function(){
 		$("#viLi").addClass("active");
+		$("#input-21a").rating();
 	});
 	function showContent(title,content){
 	$("#rT").html(title);
@@ -94,18 +97,12 @@
 
 
 					<div class="form-group">
-						<label for="inputEmail3" class="col-sm-2 control-label">Assessments</label>
-						<div class="col-sm-1"></div>
-						<div class="col-sm-8">
-							<select class="form-control" id="inputEmail3" name="grades" required="">
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5</option>
-							</select>
-						</div>
+					<label for="inputEmail3" class="col-sm-2 control-label">Assessments</label>
+					<div class="col-sm-1"></div>
+					<div class="col-sm-8">
+						<input id="input-21a" name="grades" value="0" type="number" class="rating" min=0 max=5 step=0.5 data-size="xs" >
 					</div>
+				</div>
 
 
 					</div>
