@@ -62,7 +62,6 @@
 					<th>Sex</th>
 					<th>Email</th>
 					<th>Telephone</th>
-					<th>Group</th>
 				</tr>
 				<?php
 				while($row=mysqli_fetch_row($result)){
@@ -73,7 +72,6 @@
 						<td><?php echo $row[3]?></td>
 						<td><?php echo $row[4]?></td>
 						<td><?php echo $row[5]?></td>
-						<td><?php $grId = round($row[6]/10) + 1; echo $grId?></td>
 						<td><a href="../controller/deleteStuController.php?account=<?php echo $row[0]?>">delete</a></td>
 						<?php
 					}
