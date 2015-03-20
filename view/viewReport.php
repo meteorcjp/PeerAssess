@@ -17,17 +17,41 @@
 	$(function(){
 		$("#viLi").addClass("active");
 	});
+	function showContent(title,content){
+	$("#rT").html(title);
+	$("#causeLg").html(content);
+	$("#sucLg").modal("toggle");
+}
 
 	</script>
 </head>
 
 <body>
 
+
 	<?php
-	require_once './stuHeader.php';
+		require_once './stuHeader.php';
 	?>
-
-
+	<div id="sucLg" class="modal fade bs-example-modal-sm" tabindex="-1"
+		role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 id="rT" class="modal-title">Hint Info</h4>
+				</div>
+				<div class="modal-body">
+					<p id="causeLg">Operation Successfully!</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div class="container">
 
 		<div class="starter-template">
@@ -38,41 +62,41 @@
 				<p>The reports allocated to your group:</p>
 			</div>
 			<?php
-			require_once '../model/Report.php';
-			$result = getRelatedReport($_SESSION['account']);
-			while($row = mysqli_fetch_row($result)){
-				?>
-				<div
+				require_once '../model/Report.php';
+				$result = getRelatedReport($_SESSION['account']);
+				while($row = mysqli_fetch_row($result)){
+					?>
+					<div
 				style="border-top: 1px solid #ccc">
 				<form class="form-horizontal" action="../controller/addAssController.php">
 					<input type="hidden" name="reportId" value="<?php echo $row[0]?>">
-
 					<div class="form-group">
 						<label for="inputEmail3" class="col-sm-2 control-label">Link</label>
-						<div class="col-sm-10" style="margin-top:5px;">
+						<div class="col-sm-1"></div>
+						<div class="col-sm-8" style="margin-top:5px;">
 							<a href="../files/<?php echo $row[2]?>"><?php echo $row[1]?></a>
 							<?php
 								$content = file_get_contents("../files/$row[2]");
 								$content = nl2br($content);
-								echo 'b';
-								echo $row[2];
-								echo $content;
 								$title = $row[1];
 							?>
+							<a style="margin-left:50px;" href="javascript:showContent('','')">view this report</a>
 						</div>
 					</div>
-
 					<div class="form-group">
 						<label for="inputEmail3" class="col-sm-2 control-label">Report</label>
 						<div class="col-sm-9" style="margin-top:5px;">
-							<h3 style="text-align:center;"><?php echo $title?></h3></br>
-							<p><?php echo $content?></p>
+							<h3 style="text-align:center;"><?php echo $title?></h3>
+						</br>
+						<p><?php echo $content?></p>
 						</div>
 					</div>
 
+
 					<div class="form-group">
 						<label for="inputEmail3" class="col-sm-2 control-label">Assessments</label>
-						<div class="col-sm-10">
+						<div class="col-sm-1"></div>
+						<div class="col-sm-8">
 							<select class="form-control" id="inputEmail3" name="grades" required="">
 								<option value="1">1</option>
 								<option value="2">2</option>
@@ -83,27 +107,29 @@
 						</div>
 					</div>
 
+
+					</div>
 					<div class="form-group">
 						<label for="inputPassword3" class="col-sm-2 control-label">Comment</label>
-						<div class="col-sm-10">
+						<div class="col-sm-1"></div>
+						<div class="col-sm-8">
 							<input type="text" class="form-control" id="inputPassword3"
-							placeholder="Comment" name="comment" required="">
+								placeholder="Comment" name="comment" required="">
 						</div>
 					</div>
-
 					<div class="form-group">
-						<div class="col-sm-offset-2 col-sm-10">
+						<div class="col-sm-offset-3 col-sm-10">
 							<button type="submit" class="btn btn-default">Confirm</button>
 						</div>
 					</div>
-
 				</form>
 			</div>
 			<?php
-		}
-		?>
+				}
+			?>
+		</div>
 	</div>
-</div>
+	<!-- /.container -->
 
 
 
