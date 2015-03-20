@@ -94,7 +94,7 @@
 						<label for="inputEmail3" class="col-sm-2 control-label">Assessments</label>
 						<div class="col-sm-1"></div>
 						<div class="col-sm-8">
-							<input id="input-21a" name="grades" value="0" type="number" class="rating" min=0 max=5 step=0.5 data-size="xs" >
+							<input id="input-21a" name="grades" value="0" type="number" class="rating" min=0 max=5 step=1 data-size="xs" >
 						<!--
 							<input type="text" class="form-control" id="inputEmail3"
 								placeholder="Grading assessments" name="grades" required="">
