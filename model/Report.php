@@ -25,4 +25,11 @@
 
 		return $result;
 	}
+
+	function selectByName($name){
+	$conn = getConn();
+	$selectSql = "select * from Report where name='$name'";
+	$result = mysqli_query($conn, $selectSql);
+	return $result;
+	}
 ?>
