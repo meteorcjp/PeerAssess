@@ -1,7 +1,7 @@
 <?php
 	require_once '../util/DBUtil.php';
 
-	function addReport($title,$name,$uploader,$desc,$content,$uploadTime){
+	function addReport($title,$name,$uploader,$desc,$uploadTime){
 		$conn = getConn();
 		$deleteSql = "delete from Report where uploader in (select account from Student where groupId in (select groupId from Student where account = '$uploader'))";
 		mysqli_query($conn, $deleteSql);
