@@ -79,9 +79,10 @@
 						<div class="col-sm-8" style="margin-top:5px;">
 							<a href="../files/<?php echo $row[2]?>"><?php echo $row[1]?></a>
 							<?php
-								$content = file_get_contents("../files/$row[2]");
-								$content = nl2br($content);
+								<!-- $content = file_get_contents("../files/$row[2]");
+								$content = nl2br($content); -->
 								$title = $row[1];
+								$content = $row[4];
 							?>
 						</div>
 					</div>
